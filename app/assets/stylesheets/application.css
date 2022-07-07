@@ -98,7 +98,6 @@
 }
 
 .page {
-  width: 100vw;
   height: 100vh;
   background-color: #f1f3f2;
 }
@@ -185,4 +184,51 @@
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.image-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-links > a {
+  text-decoration: none;
+}
+
+.msgs {
+  position: fixed;
+  z-index: 100;
+  background: #5fb523;
+  border-radius: 12px;
+  bottom: 12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.msgs > .alert {
+  color: inherit;
+  padding: 4px 12px;
+}
+
+.msgs > .notice {
+  color: inherit;
+  padding: 4px 12px;
+}
+
+.msgs-close {
+  color: white;
+  align-self: flex-end;
+  cursor: pointer;
+  padding: 4px 4px 0 0;
+  font-size: 1rem;
 }
