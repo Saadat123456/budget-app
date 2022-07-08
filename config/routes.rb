@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users
 
-  get 'categories/new', to: 'groups#new', as: 'new_group'
-  
+  resources :categories, controller: :groups, only: [:index, :new, :create] do
+    resources :budgetting_transactions, only: [:index]
+  end
+
   unauthenticated do
     root 'splash#index'
   end
