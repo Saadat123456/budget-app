@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :groups
+  has_many :budgetting_transactions
 
   validates :name, presence: true
   validates :email, presence: true
