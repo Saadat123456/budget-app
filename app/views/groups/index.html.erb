@@ -30,13 +30,11 @@
 </section>
 <%= render "shared/menu_container" %>
 <script>
-  let hamburger = document.querySelector('#hamburger')
-  hamburger.addEventListener('click', () => {
+  document.querySelector('#hamburger').addEventListener('click', () => {
     document.querySelector('.menu-container').style.display = 'flex';
   })
 
-  let sidePanel = document.querySelector('.side-area')
-  sidePanel.addEventListener('click', () => {
+  document.querySelector('.side-area').addEventListener('click', () => {
     document.querySelector('.menu-container').style.display = 'none';
   })
 </script>
