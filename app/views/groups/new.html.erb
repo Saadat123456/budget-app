@@ -1,6 +1,6 @@
 <section class="page">
   <%= render partial: 'shared/top_menu', locals: { icon: 'arrow.png', name: 'Add Category', form: 'new-category', btn_text: 'Create' } %>
-  <%= form_for( :category , remote: true, data: { turbo: false }, id: 'new-category') do |f| %>
+  <%= form_for( :category, url: '/categories', data: { turbo: false }, id: 'new-category') do |f| %>
     <div class="field image">
       <img src=<%=image_path("category_default.png")%> id='group-image' class="img-w60"/>
       <div class="image-input">

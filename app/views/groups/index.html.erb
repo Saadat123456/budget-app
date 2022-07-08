@@ -1,11 +1,29 @@
-<section>
+<section class="page">
+  <header>
+    <div class="actions">
+      <img src=<%=image_path("hamburger.svg")%> id='group-image' class="group-image"/>
+    </div>
+    <h2>Categories</h2>
+    <div class="actions">
+      <img src=<%=image_path("search.svg")%> id='group-image' class="group-image"/>
+    </div>
+  </header>
   <div>
     <% @groups.each do |group| %>
-      group.name
+      <a href=<%= category_budgetting_transactions_path(category_id: group.id) %>>
+        <div class="group">
+          <% if group.image.attached? %>
+            <div><%= image_tag group.image, class: 'group-image' %></div>
+          <% else %>
+            <div><img src=<%=image_path("category_default.png")%> id='group-image' class="group-image"/></div>
+          <% end %>
+          <div class='group-name'><%= group.name %></div>
+        </div>
+      </a>      
     <% end %>
   </div>
 
   <div>
-    <%= button_to "Add Category", new_group_path, method: :get %>
+    <%= button_to "Add Category", new_category_path, method: :get %>
   </div>
 </section>
