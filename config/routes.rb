@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories, controller: :groups, only: [:index, :new, :create] do
-    resources :budgetting_transactions, only: [:index]
+    resources :budgetting_transactions, only: [:index, :new, :create]
   end
 
   unauthenticated do

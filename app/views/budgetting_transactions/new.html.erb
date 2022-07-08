@@ -1,0 +1,11 @@
+<section class="page">
+  <%= render partial: 'shared/top_menu', locals: { icon: 'arrow.png', name: 'Add Transaction', form: 'new-transaction', btn_text: 'Create' } %>
+  <%= form_for( :budgetting_transactions, url: "/categories/" + @category_id + "/budgetting_transactions", data: { turbo: false }, id: 'new-transaction') do |f| %>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
+    </div>
+    <div class="field">
+      <%= f.number_field :amount, autofocus: true, placeholder: "Ammount", step: 0.01 %>
+    </div>
+  <% end %>
+</section>
