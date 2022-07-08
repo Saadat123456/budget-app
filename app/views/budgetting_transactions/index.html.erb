@@ -6,13 +6,33 @@
       <img src=<%=image_path("search.svg")%> id='group-image' class="group-image"/>
     </div>
   </header>
-  <% @transactions.each do |transaction| %>
-    <div>
-      <div><%= transaction.name %></div>
-      <div><%= transaction.amount %>$</div>      
-    </div>
-  <% end %>
-  <div>
-    <%= button_to "Add Transaction", new_category_budgetting_transaction_path, method: :get %>
+
+  <div class="category-details">
+    <% if @category.image.attached? %>
+      <div><%= image_tag @category.image, class: 'details-image' %></div>
+    <% else %>
+      <div><img src=<%=image_path("category_default.png")%> id='details-image' class="details-image"/></div>
+    <% end %>
+    <div class="details-name"><%= @category.name %></div>
+    <div class="details-price">$<%= BudgettingTransaction.where(group_id: @category.id).sum(:amount) %></div>
+  </div>
+  
+  <div class="transaction-list">
+    <% @transactions.each do |transaction| %>
+      <a href=<%= category_budgetting_transaction_path id: transaction.id %>>
+        <div class="group">
+          <div class="name-time">
+            <div class="group-name"><%= transaction.name %></div>
+            <div><%= time_tag(transaction.created_at,
+                  "data-local": "time-ago")%></div>
+          </div>
+          <div><%= transaction.amount %>$</div>  
+        </div>
+      </a>
+    <% end %>
+  </div>
+  
+  <div class="btn-container">
+    <%= button_to "Add Transaction", new_category_budgetting_transaction_path, method: :get, class: "add-transaction-btn" %>
   </div>
 </section>
