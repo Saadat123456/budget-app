@@ -1,1 +1,18 @@
-Budgetting Transactions
+<section class="page">
+  <header>
+    <%= link_to image_tag(image_path('arrow.png')), :back, class: "back-btn" %>
+    <h2>Transactions</h2>
+    <div class="actions">
+      <img src=<%=image_path("search.svg")%> id='group-image' class="group-image"/>
+    </div>
+  </header>
+  <% @transactions.each do |transaction| %>
+    <div>
+      <div><%= transaction.name %></div>
+      <div><%= transaction.amount %>$</div>      
+    </div>
+  <% end %>
+  <div>
+    <%= button_to "Add Transaction", new_category_budgetting_transaction_path, method: :get %>
+  </div>
+</section>
