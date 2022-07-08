@@ -115,10 +115,14 @@
   flex: 1;
   text-align: center;
   cursor: default;
+  font-size: 2.5rem;
 }
 
 .page header .actions {
   justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-btn {
@@ -168,9 +172,16 @@
   border-radius: 50%;
 }
 
-.field.image #user_image {
+.field.image #user_image,
+#category_image {
   opacity: 0;
   flex: 1;
+  cursor: pointer;
+}
+
+label[for="category_image"],
+label[for="user_image"] {
+  cursor: pointer;
 }
 
 .line {
@@ -236,6 +247,17 @@
 
 .group {
   display: flex;
+  background-color: #fff;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-list > a,
+.transaction-list > a {
+  text-decoration: none;
 }
 
 .group-image {
@@ -245,4 +267,164 @@
 
 .group-name {
   flex: 1;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.category-list,
+.transaction-list {
+  padding: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.add-category-btn,
+.add-transaction-btn {
+  background-color: #5fb523;
+  color: #fff;
+  padding: 1rem 4rem;
+  border-radius: 12px;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#new-category {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#category_name {
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.name-time {
+  flex: 1;
+}
+
+#new-transaction {
+  margin: 1rem;
+}
+
+#new-transaction .field {
+  margin-bottom: 1rem;
+}
+
+#new-transaction .field input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px;
+  outline: none;
+}
+
+.category-details,
+.transaction-details {
+  display: flex;
+  padding: 20px;
+  gap: 12px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.category-details .details-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+.category-details .details-name,
+.transaction-name {
+  flex: 1;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.category-details .details-price,
+.transaction-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.transaction-details {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.transaction-details-id {
+  font-size: 1.5rem;
+}
+
+.name-amount {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #434b544d;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.menu {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-top {
+  background-color: #3778c2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.user-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.user-email {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #fff;
+}
+
+.menu-actions {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  padding-left: 3rem;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.side-area {
+  width: 20%;
+  height: 100%;
 }
