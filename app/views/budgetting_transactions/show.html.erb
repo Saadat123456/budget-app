@@ -1,0 +1,18 @@
+<section class="page">
+  <header>
+    <%= link_to image_tag(image_path('arrow.png')), :back, class: "back-btn" %>
+    <h2>Details</h2>
+    <div class="actions">
+      <img src=<%=image_path("search.svg")%> id='group-image' class="group-image"/>
+    </div>
+  </header>
+  <div class="transaction-details">
+    <div class="transaction-details-id">Transaction # <%= @transaction.id %></div>
+    <div class="name-amount">
+      <div class="transaction-name"><%= @transaction.name %></div>
+      <div class="transaction-price">$<%= @transaction.amount %></div>
+    </div>
+    <div><%= time_tag(@transaction.created_at,
+                  "data-local": "time-ago")%></div>
+  </div>
+</section>

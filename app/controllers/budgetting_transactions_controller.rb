@@ -2,10 +2,15 @@ class BudgettingTransactionsController < ApplicationController
   def index
     category_id = params[:category_id]
     @transactions = BudgettingTransaction.where(group_id: category_id)
+    @category = Group.find(category_id.to_i)
   end
 
   def new
     @category_id = params[:category_id]
+  end
+
+  def show
+    @transaction = BudgettingTransaction.find params[:id]
   end
 
   def create
