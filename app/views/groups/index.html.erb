@@ -18,6 +18,7 @@
             <div><img src=<%=image_path("category_default.png")%> id='group-image' class="group-image"/></div>
           <% end %>
           <div class='group-name'><%= group.name %></div>
+          <div><%= BudgettingTransaction.where(group_id: group.id).sum(:amount) %>$</div>
         </div>
       </a>      
     <% end %>
