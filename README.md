@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# OOP School Library
+# Budgeting App
 
 > A ruby on rails app for maintaining personnel budgets.
 
@@ -37,6 +37,10 @@ To get a local copy follow these simple example steps.
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
+
+## Acknowledgements
+[Design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) by [Gregoire Vella](https://www.behance.net/gregoirevella)
+
 
 ## Show your support
 
