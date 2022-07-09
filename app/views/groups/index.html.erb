@@ -1,0 +1,40 @@
+<section class="page">
+  <header>
+    <div class="actions">
+      <img src=<%=image_path("hamburger.svg")%> id='hamburger' class="group-image"/>
+    </div>
+    <h2>Categories</h2>
+    <div class="actions">
+      <img src=<%=image_path("search.svg")%> id='group-image' class="group-image"/>
+    </div>
+  </header>
+  <div class="category-list">
+    <% @groups.each do |group| %>
+      <a href=<%= category_budgetting_transactions_path(category_id: group.id) %>>
+        <div class="group">
+          <% if group.image.attached? %>
+            <div><%= image_tag group.image, class: 'group-image' %></div>
+          <% else %>
+            <div><img src=<%=image_path("category_default.png")%> id='group-image' class="group-image"/></div>
+          <% end %>
+          <div class='group-name'><%= group.name %></div>
+          <div>$<%= BudgettingTransaction.where(group_id: group.id).sum(:amount) %></div>
+        </div>
+      </a>      
+    <% end %>
+  </div>
+
+  <div class="btn-container">
+    <%= button_to "Add Category", new_category_path, method: :get, class: "add-category-btn" %>
+  </div>
+</section>
+<%= render "shared/menu_container" %>
+<script>
+  document.querySelector('#hamburger').addEventListener('click', () => {
+    document.querySelector('.menu-container').style.display = 'flex';
+  })
+
+  document.querySelector('.side-area').addEventListener('click', () => {
+    document.querySelector('.menu-container').style.display = 'none';
+  })
+</script>

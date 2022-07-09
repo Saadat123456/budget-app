@@ -1,0 +1,30 @@
+<section class="page">
+  <%= render partial: 'shared/top_menu', locals: { icon: 'arrow.png', name: 'Add Category', form: 'new-category', btn_text: 'Create' } %>
+  <%= form_for( :category, url: '/categories', data: { turbo: false }, id: 'new-category') do |f| %>
+    <div class="field image">
+      <img src=<%=image_path("category_default.png")%> id='group-image' class="img-w60"/>
+      <div class="image-input">
+        <%= f.label :image, "Upload picture" %>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: "Category" %>
+    </div>
+  <% end %>
+</section>
+
+<script>
+  function showImage(src,target) {
+    var fr=new FileReader();
+    // when image is loaded, set the src of the image where you want to display it
+    fr.onload = function(e) { target.src = this.result; };
+    src.addEventListener("change",function() {
+      // fill fr with image data    
+      fr.readAsDataURL(src.files[0]);
+    });
+  }
+  var src = document.getElementById("category_image");
+  var target = document.getElementById("group-image");
+  showImage(src,target);
+</script>

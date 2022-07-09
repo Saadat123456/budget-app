@@ -1,0 +1,19 @@
+<div class="menu-container">
+  <div class="menu">
+    <div class="menu-top">
+      <% if current_user.image.attached? %>
+        <div><%= image_tag current_user.image, class: 'user-image' %></div>
+      <% else %>
+        <div><%= image_tag(image_path("user.png"), class: "group-image") %></div>
+      <% end %>
+      <div class="user-name"><%= current_user.name %></div>
+      <div class="user-email"><%= current_user.email %></div>
+    </div>
+    <div class="menu-actions">
+      <%= button_to destroy_user_session_path, method: :delete, data: { turbo: false }, class: "logout-btn" do %>
+        <%= image_tag(image_path("logout.png"), class: "group-image") %>
+      <% end %>
+    </div>
+  </div>
+  <div class="side-area"></div>
+</div>

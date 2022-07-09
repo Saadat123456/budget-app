@@ -1,0 +1,430 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+  font-family: 'ProximaNova';
+  font-weight: normal;
+  src: url("../fonts/ProximaNova-Regular.otf") format("Opentype");
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  font-weight: bold;
+  src: url("../fonts/ProximaNova-Bold.otf") format("Opentype");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #434b54;
+  font-family: 'ProximaNova', sans-serif;
+}
+
+.splash {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.splash h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'ProximaNova', sans-serif;
+}
+
+.splash > header {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash > .action-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 4px;
+}
+
+.splash > .action-buttons button {
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.btn-login {
+  color: white;
+  background-color: #3778c2;
+  border: 1px solid #3778c2;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.btn-login:hover {
+  background-color: #2f69ac;
+}
+
+.btn-login:active {
+  background-color: #27568b;
+}
+
+.btn-sign-up {
+  background-color: transparent;
+  border: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.btn-sign-up:hover {
+  background-color: rgb(233, 232, 232);
+}
+
+.btn-sign-up:active {
+  background-color: rgb(212, 212, 212);
+}
+
+.page {
+  height: 100vh;
+  background-color: #f1f3f2;
+}
+
+.page header {
+  display: flex;
+  background-color: #3778c2;
+  color: #fff;
+  align-items: center;
+  padding: 1rem 0.5rem;
+}
+
+.page header h2 {
+  color: inherit;
+  flex: 1;
+  text-align: center;
+  cursor: default;
+  font-size: 2.5rem;
+}
+
+.page header .actions {
+  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-btn {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-btn img {
+  height: 1.5rem;
+}
+
+#new_user {
+  display: flex;
+  padding: 0.5rem;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 1rem 0;
+}
+
+#new_user .field {
+  display: flex;
+  width: 100%;
+}
+
+#new_user .field input {
+  flex: 1;
+  border: 0;
+  font-size: 1rem;
+  outline: 0;
+  padding: 0.7rem 0;
+}
+
+.field.image {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0;
+}
+
+.field.image img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.field.image #user_image,
+#category_image {
+  opacity: 0;
+  flex: 1;
+  cursor: pointer;
+}
+
+label[for="category_image"],
+label[for="user_image"] {
+  cursor: pointer;
+}
+
+.line {
+  background-color: #f1f3f2;
+  height: 2px;
+}
+
+#btn-next {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.image-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-links > a {
+  text-decoration: none;
+}
+
+.msgs {
+  position: fixed;
+  z-index: 100;
+  background: #5fb523;
+  border-radius: 12px;
+  bottom: 12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.msgs > .alert {
+  color: inherit;
+  padding: 4px 12px;
+}
+
+.msgs > .notice {
+  color: inherit;
+  padding: 4px 12px;
+}
+
+.msgs-close {
+  color: white;
+  align-self: flex-end;
+  cursor: pointer;
+  padding: 4px 4px 0 0;
+  font-size: 1rem;
+}
+
+.group {
+  display: flex;
+  background-color: #fff;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-list > a,
+.transaction-list > a {
+  text-decoration: none;
+}
+
+.group-image {
+  width: 3rem;
+  height: 3rem;
+}
+
+.group-name {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.category-list,
+.transaction-list {
+  padding: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.add-category-btn,
+.add-transaction-btn {
+  background-color: #5fb523;
+  color: #fff;
+  padding: 1rem 4rem;
+  border-radius: 12px;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#new-category {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#category_name {
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.name-time {
+  flex: 1;
+}
+
+#new-transaction {
+  margin: 1rem;
+}
+
+#new-transaction .field {
+  margin-bottom: 1rem;
+}
+
+#new-transaction .field input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px;
+  outline: none;
+}
+
+.category-details,
+.transaction-details {
+  display: flex;
+  padding: 20px;
+  gap: 12px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.category-details .details-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+.category-details .details-name,
+.transaction-name {
+  flex: 1;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.category-details .details-price,
+.transaction-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.transaction-details {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.transaction-details-id {
+  font-size: 1.5rem;
+}
+
+.name-amount {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #434b544d;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.menu {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-top {
+  background-color: #3778c2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.user-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.user-email {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #fff;
+}
+
+.menu-actions {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  padding-left: 3rem;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.side-area {
+  width: 20%;
+  height: 100%;
+}
