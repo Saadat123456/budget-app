@@ -4,7 +4,8 @@
 
 > A ruby on rails app for maintaining personnel budgets.
 
-
+## Live Link
+[LIVE DEMO](https://budgeting-app-rails.herokuapp.com/)
 ## Built With
 
 - Ruby
