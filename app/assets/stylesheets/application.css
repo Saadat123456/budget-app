@@ -17,13 +17,13 @@
 @font-face {
   font-family: 'ProximaNova';
   font-weight: normal;
-  src: font-url("ProximaNova-Regular.otf") format("Opentype");
+  src: url("../fonts/ProximaNova-Regular.otf") format("Opentype");
 }
 
 @font-face {
   font-family: 'ProximaNova';
   font-weight: bold;
-  src: font-url("ProximaNova-Bold.otf") format("Opentype");
+  src: url("../fonts/ProximaNova-Bold.otf") format("Opentype");
 }
 
 * {
@@ -31,6 +31,7 @@
   padding: 0;
   margin: 0;
   color: #434b54;
+  font-family: 'ProximaNova', sans-serif;
 }
 
 .splash {
@@ -243,7 +244,6 @@ label[for="user_image"] {
   padding: 4px 4px 0 0;
   font-size: 1rem;
 }
-
 
 .group {
   display: flex;
