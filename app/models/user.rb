@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :groups
   has_many :budgetting_transactions
 
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :image, presence: true
+  validates :name, presence: { message: "Name can't be blank" }
+  validates :email, presence: { message: "Email can't be blank" }
 end
