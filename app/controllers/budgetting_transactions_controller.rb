@@ -1,4 +1,5 @@
 class BudgettingTransactionsController < ApplicationController
+  before_action :authenticate_user!
   def index
     category_id = params[:category_id]
     @transactions = BudgettingTransaction.where(group_id: category_id)
