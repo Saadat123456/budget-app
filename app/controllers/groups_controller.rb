@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @groups = Group.all
+    @groups = Group.includes(image_attachment: :blob).all
   end
 
   def new; end
