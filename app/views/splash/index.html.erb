@@ -3,7 +3,7 @@
     <h1>Budgeting</h1>
   </header>
   <div class='action-buttons'>
-    <%= button_to "LOGIN", new_user_session_path, class:'btn btn-login', method: :get %>
-    <%= button_to "SIGN UP", new_user_registration_path, class:'btn btn-sign-up', method: :get %>
+    <%= button_to "LOGIN", new_user_session_path, class:'btn btn-login', method: :get, data: { turbo: false } %>
+    <%= button_to "SIGN UP", new_user_registration_path, class:'btn btn-sign-up', method: :get, data: { turbo: false } %>
   </div>
 </section>
